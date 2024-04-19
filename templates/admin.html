@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+            margin-top: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td.command-column {
+            width: 40%; /* Adjust the width of the command column as needed */
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form {
+            margin: 0;
+        }
+        input[type="text"], input[type="submit"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #3949a3;
+            color: white;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #3949a3;
+        }
+        .delete-btn {
+            background-color: #f44336;
+        }
+        .delete-btn:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Page</h1>
+        
+        <!-- Form to add a new custom command -->
+        <h2>Add Custom Command</h2>
+        <form method="post">
+            <input type="hidden" name="action" value="add">
+            <label for="url">URL:</label><br>
+            <input type="text" id="url" name="url" required><br>
+            <label for="command">Command:</label><br>
+            <input type="text" id="command" name="command" required><br><br>
+            <input type="submit" value="Add Command">
+        </form>
+        
+        <!-- Editable and deletable table for existing custom commands -->
+        <h2>Edit/Delete Custom Commands</h2>
+        <table>
+            <tr>
+                <th>URL</th>
+                <th>Command</th>
+                <th>Action</th>
+            </tr>
+            {% for command_id, command_info in custom_commands.items() %}
+                <tr>
+                    <td>
+                        <form method="post">
+                            <input type="hidden" name="action" value="edit">
+                            <input type="hidden" name="command_id" value="{{ command_id }}">
+                            <input type="text" name="url" value="{{ command_info.url }}" required>
+                    </td>
+                    <td>
+                            <input type="text" name="command" value="{{ command_info.command }}" required>
+                    </td>
+                    <td>
+                            <input type="submit" value="Update">
+                        </form>
+                        <form method="post">
+                            <input type="hidden" name="action" value="delete">
+                            <input type="hidden" name="command_id" value="{{ command_id }}">
+                            <input type="hidden" name="url" value="{{ command_info.url }}">
+                            <input type="submit" value="Delete" class="delete-btn">
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

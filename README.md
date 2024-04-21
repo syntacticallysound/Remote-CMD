@@ -134,4 +134,7 @@ This will open the URL in your default browser
 
 ## Contributing
 
+## Buy Me A Coffee
+https://buymeacoffee.com/syntacticallysound
+
 Contributions are welcome! Please open an issue to discuss any changes or improvements you'd like to make.

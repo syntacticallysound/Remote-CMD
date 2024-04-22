@@ -132,9 +132,4 @@ This will open the URL in your default browser
 - Flask-SQLAlchemy: Flask extension for working with SQLAlchemy ORM.
 - subprocess: Module for spawning new processes and executing shell commands.
 
-## Contributing
 
-## Buy Me A Coffee
-https://buymeacoffee.com/syntacticallysound
-
-Contributions are welcome! Please open an issue to discuss any changes or improvements you'd like to make.

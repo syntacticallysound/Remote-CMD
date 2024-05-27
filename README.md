@@ -118,7 +118,7 @@ This will open the URL in your default browser
 ***Now when you scan your NFC card or sticker it will trigger the URL in the background performing the desired function on the flask server***
 
 > [!NOTE]
-> Android users will follow a similar procedure using a third party app such as macrodroid instructions will created in the future 
+> Android users will follow a similar procedure using a third party app such as macrodroid instructions will be created in the future 
 
 
 ## Project Structure

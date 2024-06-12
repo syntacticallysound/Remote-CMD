@@ -6,7 +6,7 @@ The Main aim of this was to allow for triggering commands via sticker NFC tags t
 
 > [!WARNING]
 >
-> **This application has no authentication protocols in place and as such is not advised to be used in a production environment and is used at your own risk - (This feature will be added in the future)**
+> **This application has no authentication protocols in place and as such is not advised to be used in a commercial environment - (This feature will be added in the future)**
 > 
 > 
 
